@@ -2,6 +2,8 @@
 
 适用于 Kindle Paperwhite 的屏保图片。
 
+在线预览：<https://mazhuang.org/kindle-paperwhite-screensavers/>
+
 与 [kual-screensaver-sync](https://github.com/mzlogin/kual-screensaver-sync) 配合使用时，需要有以下文件结构：
 
 ```

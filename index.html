@@ -94,7 +94,7 @@ function initGallery() {
       var galleryNode = document.getElementById("galleryOne");
       var json = JSON.parse(request.responseText);
       for (let imgName of Object.keys(json)) {
-        var imgUrl = baseUrl + "/screensavers/" + imgName;
+        var imgUrl = baseUrl + "screensavers/" + imgName;
         var childNode = document.createElement("a");
         childNode.setAttribute("href", imgUrl);
         childNode.innerHTML = '<img src="' + imgUrl + '">';

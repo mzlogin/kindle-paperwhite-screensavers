@@ -1,0 +1,113 @@
+<!doctype html>
+<!-- ref https://feimosi.github.io/baguetteBox.js/ -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Kindle Paperwhite ScreenSavers</title>
+    <link rel="stylesheet" href="https://mazhuang.org/kindle-paperwhite-screensavers/css/baguetteBox.css">
+    <style>
+body {
+  background-color: #666;
+  color: #ddd;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+a, a:visited {
+  color: #97B6D6;
+  text-decoration: none;
+}
+
+h1, h2, h3, footer, .gallery {
+  text-align: center;
+}
+
+pre {
+  width: 300px;
+  margin: 0 auto;
+  border: dashed 1px #aaa;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+header, footer {
+  padding: .2em 0;
+  background: #555;
+  box-shadow: 0 0 8px #222;
+}
+
+footer {
+  margin-top: 1em;
+}
+
+.content {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.gallery {
+  margin-top: 8px;
+}
+
+.gallery img {
+  height: 200px;
+  transition: -webkit-filter .4s, filter .4s;
+  filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+}
+
+.gallery img:hover {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+.gallery a {
+  width: 250px;
+  height: 200px;
+  display: inline-block;
+  overflow: hidden;
+  margin: 4px;
+  box-shadow: 0 0 4px -1px #000;
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Kindle Paperwhite ScreenSavers</h1>
+      <h3><a href="https://github.com/mzlogin/kindle-paperwhite-screensavers">https://github.com/mzlogin/kindle-paperwhite-screensavers</a></h3>
+    </header>
+    <div id="galleryOne" class="baguetteBoxOne gallery">
+    </div>
+    <script src="https://mazhuang.org/kindle-paperwhite-screensavers/js/baguetteBox.js"></script>
+    <script>
+function initGallery() {
+  var baseUrl = "https://mazhuang.org/kindle-paperwhite-screensavers/";
+  var metaFile = baseUrl + "meta.json";
+  var request = new XMLHttpRequest();
+  request.open("get", metaFile);
+  request.send(null);
+  request.onload = function() {
+    if (request.status == 200) {
+      var galleryNode = document.getElementById("galleryOne");
+      var json = JSON.parse(request.responseText);
+      for (let imgName of Object.keys(json)) {
+        var imgUrl = baseUrl + "/screensavers/" + imgName;
+        var childNode = document.createElement("a");
+        childNode.setAttribute("href", imgUrl);
+        childNode.innerHTML = '<img src="' + imgUrl + '">';
+        galleryNode.appendChild(childNode);
+      }
+      baguetteBox.run('.baguetteBoxOne');
+    }
+  }
+}
+
+window.onload = function() {
+  initGallery();
+}
+    </script>
+  </body>
+</html>

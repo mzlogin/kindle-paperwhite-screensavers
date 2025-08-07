@@ -21,6 +21,7 @@ jobs:
       - name: Generate Meta Data
         run: |
           python3 meta-data-generator.py
+          python3 meta-data-generator.py kpw3
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2

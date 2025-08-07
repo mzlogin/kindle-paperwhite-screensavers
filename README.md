@@ -1,8 +1,12 @@
 # kindle-paperwhite-screensavers
 
-适用于 Kindle Paperwhite 的屏保图片。
+适用于 Kindle Paperwhite 和 Paperwhite3 的屏保图片。
 
-在线预览：<https://mazhuang.org/kindle-paperwhite-screensavers/>
+在线预览：
+
+Kindle Paperwhite: <https://mazhuang.org/kindle-paperwhite-screensavers/>
+
+Kindle Paperwhite 3: <https://mazhuang.org/kindle-paperwhite-screensavers/kpw3/>
 
 与 [kual-screensaver-sync](https://github.com/mzlogin/kual-screensaver-sync) 配合使用时，需要有以下文件结构：
 
@@ -14,4 +18,4 @@
     ├── bg_ss02.png
 ```
 
-meta.json 文件里记录了 screensavers 里每个 png 文件的 md5 值，screensavers 文件夹里的内容有更改时，记得重新运行 `python3 meta-data-generator.py` 重新生成 meta.json 文件。
+meta.json 文件里记录了 screensavers 里每个 png 文件的 md5 值，screensavers 文件夹里的内容有更改时，记得重新运行 `python3 meta-data-generator.py [kpw3]` 重新生成 meta.json 文件。
